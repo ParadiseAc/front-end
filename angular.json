@@ -30,7 +30,8 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "i18nFormat": "xtb"
           },
           "configurations": {
             "production": {
@@ -61,6 +62,18 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "en": {
+              "aot": true,
+              "outputPath": "dist/Paradise-en",
+              "i18nFile": "src/i18n/messages.en.xtb",
+              "i18nLocale": "en"
+            },
+            "fa": {
+              "aot": true,
+              "outputPath": "dist/Paradise-fa",
+              "i18nFile": "src/i18n/messages.fa.xtb",
+              "i18nLocale": "fa"
             }
           }
         },
@@ -72,6 +85,12 @@
           "configurations": {
             "production": {
               "browserTarget": "Paradise:build:production"
+            },
+            "en": {
+              "browserTarget": "Paradise:build:en"
+            },
+            "fa": {
+              "browserTarget": "Paradise:build:fa"
             }
           }
         },
@@ -122,8 +141,25 @@
               "devServerTarget": "Paradise:serve:production"
             }
           }
+        },
+        "xliffmerge": {
+          "builder": "@ngx-i18nsupport/tooling:xliffmerge",
+          "options": {
+            "xliffmergeOptions": {
+              "i18nFormat": "xmb",
+              "i18nFile": "messages.xmb",
+              "srcDir": "src/i18n",
+              "genDir": "src/i18n",
+              "defaultLanguage": "en",
+              "languages": [
+                "en",
+                "fa"
+              ]
+            }
+          }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "Paradise"
 }

@@ -4,10 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:fa": "ng serve --configuration=fa",
     "build": "ng build",
+    "build:fa": "ng build --configuration=fa",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "extract-i18n": "ng xi18n Paradise --i18n-format=xmb --output-path src/i18n --i18n-locale en && ng run Paradise:xliffmerge"
   },
   "private": true,
   "dependencies": {
@@ -28,6 +31,7 @@
     "@angular/cli": "~8.3.0",
     "@angular/compiler-cli": "~8.2.3",
     "@angular/language-service": "~8.2.3",
+    "@ngx-i18nsupport/tooling": "^8.0.3",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~12.7.2",
